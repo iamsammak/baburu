@@ -102,6 +102,7 @@ Goals for the day:
 **Day 3**: Continue implementing collision logic and assure that the bubble and cannonballs move at correct speeds
 Goals for the day:
 
+- Implement count down timer (aka user's level score)
 - Add `wall.js` that handles the logic of a cannonball colliding with the wall. Wall will be highlighted if touched
 - Level won't be complete until all four walls are highlighted together
 - Handle the game interations
