@@ -1,0 +1,10 @@
+body, html {
+  height: 100%; }
+
+#game-canvas {
+  display: block;
+  background-color: black;
+  margin: 0 auto;
+  vertical-align: middle; }
+
+/*# sourceMappingURL=style.css.map*/
