@@ -29,15 +29,17 @@ class Bubble extends MovingObject{
   collideWith(otherObject) {
     if (otherObject instanceof Cannon) {
       // replace with bounce
-      otherObject.relocate();
+      // otherObject.relocate();
+      console.log("collideWith Cannon");
       return true;
     } else if (otherObject instanceof Cannonball) {
       // bubble disappears, actually they both disappear, depending on the level
       // in level one they both disappear
       // in level two only the cannonball disappears
+      // debugger;
       this.remove();
-      // replace with bounce
       otherObject.remove();
+
       return true;
     }
   }

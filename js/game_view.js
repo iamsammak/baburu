@@ -25,8 +25,26 @@ class GameView {
     this.game.draw(this.ctx);
     this.lastTime = time;
 
-    //every call to animate requests causes another call to animate
-    requestAnimationFrame(this.animate.bind(this));
+    if (this.isGameOver()) {
+      // stopAnimation
+      console.log("Game Over");
+      // comment this back in after you get the modal working
+      this.end();
+      // requestAnimationFrame(this.animate.bind(this));
+    } else {
+      //every call to animate requests causes another call to animate
+      requestAnimationFrame(this.animate.bind(this));
+    }
+  }
+
+  isGameOver() {
+    return (this.game.bubbles.length === 0);
+  }
+
+  end() {
+    // stop animation
+    // open gameover modal
+    // logic to close gameover modal then option to play again (repopulate board)
   }
 }
 

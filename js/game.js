@@ -25,6 +25,7 @@ class Game {
   }
 
   add(incomingObj) {
+    // debugger;
     if (incomingObj instanceof Bubble) {
       this.bubbles.push(incomingObj);
     } else if (incomingObj instanceof Cannonball) {
@@ -42,9 +43,10 @@ class Game {
   addBubbles() {
     for (let i = 0; i < Game.NUM_BUBBLES; i++) {
       let newBubble = new Bubble({ game: this });
-      while(this.checkCollision(newBubble)){
+      if (this.overlapOnCreation(newBubble)) {
         newBubble = new Bubble({ game: this });
       }
+
       this.add(newBubble);
       console.log(newBubble);
     }
@@ -59,14 +61,14 @@ class Game {
   }
 
   // to ensure bubbles are initialized separated from one another
-  checkCollision(bubble) {
-    let collided = false;
+  overlapOnCreation(bubble) {
+    let overlapped = false;
     for(let i =0; i < this.allThingsOnBoard().length; i++) {
       if (this.allThingsOnBoard()[i].iscollidedWith(bubble)){
-        collided = true;
+        overlapped = true;
       }
     }
-    return collided;
+    return overlapped;
   }
 
   addCannon() {
@@ -83,16 +85,16 @@ class Game {
   }
 
   checkCollisions() {
-    const allObjects = this.allThingsOnBoard();
-    // const allObjects = this.allMoveableObjects();
+    // const allObjects = this.allThingsOnBoard();
+    const allObjects = this.allMoveableObjects(); //then everything just flies over cannon
     for (let i = 0; i < allObjects.length; i++) {
       for (let j = 0; j < allObjects.length; j++) {
         const object1 = allObjects[i];
         const object2 = allObjects[j];
-
         if (object1.iscollidedWith(object2)) {
-          // const collision = object1.collideWith(object2);
-          // if (collision) return;
+          const collision = object1.collideWith(object2);
+          // debugger;
+          if (collision) return;
           Physics.collide(object1, object2);
         }
       }
@@ -139,6 +141,7 @@ class Game {
   step(delta) {
     this.moveObjects(delta);
     this.checkCollisions();
+    // this.gameOver(); put logic in game_view
   }
 
   wrap(pos) {
@@ -156,7 +159,7 @@ Game.DIM_Y = 600;
 Game.FPS = 32;
 
 // will need to put level logic for Num of bubbles
-Game.NUM_BUBBLES = 4;
+Game.NUM_BUBBLES = 10;
 
 
 export default Game;

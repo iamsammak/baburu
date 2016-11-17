@@ -49,16 +49,16 @@ class MovingObject {
       this.vel[1] = this.vel[1] * -1;
     }
     //
-    // const time = timeDelta / NORMAL_FRAME_TIME_DELTA;
-    // const moveX = this.vel[0] * time;
-    // const moveY = this.vel[1] * time;
-    //
-    // this.pos = [this.pos[0] + moveX, this.pos[1] + moveY];
+    const time = timeDelta / NORMAL_FRAME_TIME_DELTA;
+    const moveX = this.vel[0] * time;
+    const moveY = this.vel[1] * time;
 
-    this.pos = [
-      this.pos[0] + timeDelta/20 * this.vel[0],
-      this.pos[1] + timeDelta/20 * this.vel[1]
-    ];
+    this.pos = [this.pos[0] + moveX, this.pos[1] + moveY];
+
+    // this.pos = [
+    //   this.pos[0] + timeDelta/20 * this.vel[0],
+    //   this.pos[1] + timeDelta/20 * this.vel[1]
+    // ];
 
     // got to write bounce off the wall function
     // if (this.game.isOutofBounds(this.pos)) {
@@ -74,9 +74,12 @@ class MovingObject {
     // }
   }
 
-  // remove() {
-  //   this.game.remove(this);
-  // }
+  remove() {
+    // debugger;
+    // why upon collision are you removing two bubbles and one cannonball
+    // instead of one cannonball and one bubble
+    this.game.remove(this);
+  }
 
 
 }
