@@ -1,4 +1,4 @@
-import Utils from './utils';
+import Physics from './physics';
 import MovingObject from './moving_object';
 import Cannon from './cannon';
 import Cannonball from './cannonball';
@@ -6,18 +6,24 @@ import Cannonball from './cannonball';
 const DEFAULTS = {
   COLOR: '#ca271c',
   RADIUS: 25,
-  SPEED: 4
+  SPEED: 1
 };
 
 class Bubble extends MovingObject{
   constructor(options = {}) {
     options.color = DEFAULTS.COLOR;
     options.pos = options.pos || options.game.randomPosition();
+    // console.log('my position: ', options.pos);
     options.radius = DEFAULTS.RADIUS;
-    options.vel = options.vel || Utils.randomVec(DEFAULTS.SPEED);
-    console.log('my velocity: ', options.vel);
+    options.vel = options.vel || Physics.randomVec(DEFAULTS.SPEED);
+    // console.log('my velocity: ', options.vel);
     super(options);
     // debugger;
+  }
+
+  bounce(x, y, otherObject) {
+    this.vel = [x, y];
+    this.pos = [this.pos[0] + x, this.pos[1] + y];
   }
 
   collideWith(otherObject) {
