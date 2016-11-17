@@ -1,4 +1,10 @@
 class Physics {
+  // this isn't physics but its a util function
+  static randomColor() {
+    // toString(16) is to ensure value is hexidecimal value
+    return '#'+Math.floor(Math.random()*16777203).toString(16);
+  }
+
   static dist(pos1, pos2) {
     let xSquared = Math.pow(pos1[0] - pos2[0], 2);
     let ySquared = Math.pow(pos1[1] - pos2[1], 2);

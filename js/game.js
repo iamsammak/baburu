@@ -10,6 +10,7 @@ class Game {
     this.cannons = [];
 
     this.addBubbles();
+    this.addCannon();
 
     this.width = Game.DIM_X;
     this.height = Game.DIM_Y;
@@ -148,6 +149,10 @@ class Game {
     return [
       Physics.wrap(pos[0], Game.DIM_X), Physics.wrap(pos[1], Game.DIM_Y)
     ];
+  }
+
+  isGameOver() {
+    return (this.bubbles.length === 0);
   }
 
 }

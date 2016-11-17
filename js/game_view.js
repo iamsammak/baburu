@@ -1,18 +1,63 @@
+import React from 'react';
+import Game from './game';
+
 class GameView {
-  constructor(game, ctx) {
-    this.ctx = ctx;
-    this.game = game;
+  // testing 1.0
+  // constructor(game, ctx) {
+  //   this.ctx = ctx;
+  //   this.game = game;
+  //   this.cannon = this.game.addCannon();
+  // }
+
+// comment in for testing2.0
+  constructor() {
+    this.canvas = document.getElementById("game-canvas");
+    this.ctx = this.canvas.getContext('2d');
+    this.game = new Game();
+
+    this.view = "pre-game";
+    this.keySpaceHandler = this.keySpaceHandler.bind(this);
+    document.addEventListener("keydown", this.keySpaceHandler, false);
+
     this.cannon = this.game.addCannon();
   }
 
-  bindKeyHandlers() {
-    const cannon = this.cannon;
-
-    key("space", () => { cannon.fireCannonball(); });
+  keySpaceHandler(e) {
+    if (e.keyCode === 32) {
+      this.handleSpace();
+    }
   }
 
+  handleSpace() {
+    if (this.view === "pre-game") {
+      this.view = "game";
+      this.resetGame();
+    } else if (this.view === "post-game") {
+      this.view = "pre-game";
+      // const preGame = document.getElementById('pre-game');
+      // const postGame = document.getElementById('post-game');
+      // preGame.className = "";
+      // postGame.className = "hidden";
+    }
+  }
+
+  resetGame() {
+    // const preGame = document.getElementById('pre-game');
+    // preGame.className = "hidden";
+
+    this.game = new Game();
+
+    this.start();
+  }
+
+  // keySpaceFireHandler() {
+  //   const cannon = this.cannon;
+  //
+  //   key("space", () => { cannon.fireCannonball(); });
+  // }
+
   start() {
-    this.bindKeyHandlers();
+    // this.keySpaceFireHandler();
     this.lastTime = 0;
     //start the animation
     requestAnimationFrame(this.animate.bind(this));
@@ -25,7 +70,7 @@ class GameView {
     this.game.draw(this.ctx);
     this.lastTime = time;
 
-    if (this.isGameOver()) {
+    if (this.game.isGameOver()) {
       // stopAnimation
       console.log("Game Over");
       // comment this back in after you get the modal working
@@ -35,10 +80,6 @@ class GameView {
       //every call to animate requests causes another call to animate
       requestAnimationFrame(this.animate.bind(this));
     }
-  }
-
-  isGameOver() {
-    return (this.game.bubbles.length === 0);
   }
 
   end() {
