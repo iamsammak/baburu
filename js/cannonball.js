@@ -13,7 +13,11 @@ class Cannonball extends MovingObject {
   }
 }
 
+// upon cannonball creation give it a createdAt time and then during every animate step
+// compare the cannonball's creation time to the current time and if the time execeeds a limit
+// then remove the cannonball
+
 Cannonball.RADIUS = 13;
-Cannonball.SPEED = 2;
+Cannonball.SPEED = 1.5;
 
 export default Cannonball;
