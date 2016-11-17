@@ -8,11 +8,6 @@ class GameView {
   bindKeyHandlers() {
     const cannon = this.cannon;
 
-    Object.keys(GameView.MOVES).forEach((keystroke) => {
-      let move = GameView.MOVES[keystroke];
-      key(keystroke, () => { cannon.power(move); });
-    });
-
     key("space", () => { cannon.fireCannonball(); });
   }
 

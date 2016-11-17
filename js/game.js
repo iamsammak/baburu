@@ -1,7 +1,7 @@
 import Bubble from './bubble';
 import Cannonball from './cannonball';
 import Cannon from './cannon';
-import Utils from './utils';
+import Physics from './physics';
 
 class Game {
   constructor() {
@@ -10,6 +10,18 @@ class Game {
     this.cannons = [];
 
     this.addBubbles();
+
+    this.width = Game.DIM_X;
+    this.height = Game.DIM_Y;
+    this.level = {
+      x: 4,
+      y: 83,
+      width: 0,
+      height: 0,
+      tilewidth: 30,
+      tileheight: 30,
+      radius: 15
+    };
   }
 
   add(incomingObj) {
@@ -30,9 +42,31 @@ class Game {
   addBubbles() {
     for (let i = 0; i < Game.NUM_BUBBLES; i++) {
       let newBubble = new Bubble({ game: this });
+      while(this.checkCollision(newBubble)){
+        newBubble = new Bubble({ game: this });
+      }
       this.add(newBubble);
       console.log(newBubble);
     }
+  }
+
+  allThingsOnBoard() {
+    return [].concat(this.cannons, this.bubbles, this.cannonballs);
+  }
+
+  allMoveableObjects() {
+    return [].concat(this.bubbles, this.cannonballs);
+  }
+
+  // to ensure bubbles are initialized separated from one another
+  checkCollision(bubble) {
+    let collided = false;
+    for(let i =0; i < this.allThingsOnBoard().length; i++) {
+      if (this.allThingsOnBoard()[i].iscollidedWith(bubble)){
+        collided = true;
+      }
+    }
+    return collided;
   }
 
   addCannon() {
@@ -48,20 +82,18 @@ class Game {
     return cannon;
   }
 
-  allThingsOnBoard() {
-    return [].concat(this.cannons, this.bubbles, this.cannonballs);
-  }
-
   checkCollisions() {
     const allObjects = this.allThingsOnBoard();
+    // const allObjects = this.allMoveableObjects();
     for (let i = 0; i < allObjects.length; i++) {
       for (let j = 0; j < allObjects.length; j++) {
         const object1 = allObjects[i];
         const object2 = allObjects[j];
 
         if (object1.iscollidedWith(object2)) {
-          const collision = object1.collideWith(object2);
-          if (collision) return;
+          // const collision = object1.collideWith(object2);
+          // if (collision) return;
+          Physics.collide(object1, object2);
         }
       }
     }
@@ -82,7 +114,7 @@ class Game {
   }
 
   moveObjects(delta) {
-    this.allThingsOnBoard().forEach((object) => {
+    this.allMoveableObjects().forEach((object) => {
       object.move(delta);
     });
   }
@@ -111,7 +143,7 @@ class Game {
 
   wrap(pos) {
     return [
-      Utils.wrap(pos[0], Game.DIM_X), Utils.wrap(pos[1], Game.DIM_Y)
+      Physics.wrap(pos[0], Game.DIM_X), Physics.wrap(pos[1], Game.DIM_Y)
     ];
   }
 
@@ -124,7 +156,7 @@ Game.DIM_Y = 600;
 Game.FPS = 32;
 
 // will need to put level logic for Num of bubbles
-Game.NUM_BUBBLES = 10;
+Game.NUM_BUBBLES = 4;
 
 
 export default Game;
