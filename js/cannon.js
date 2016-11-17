@@ -112,11 +112,10 @@ class Cannon extends MovingObject{
     const cannonball = new Cannonball({
       pos: this.pos,
       vel: cannonballVel,
-      angle: this.angle,
       color: this.color,
       game: this.game
     });
-
+// debugger; // testing lifespan of cannonballs
     this.game.add(cannonball);
   }
 

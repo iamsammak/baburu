@@ -1,10 +1,13 @@
 import MovingObject from './moving_object';
+import Physics from './physics';
 
 class Cannonball extends MovingObject {
   constructor(options) {
     options.radius = Cannonball.RADIUS;
     super(options);
+
     this.isWrappable = false;
+    this.createdAt = Physics.currentTime();
   }
 
   bounce(x, y, otherObject) {

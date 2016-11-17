@@ -5,6 +5,11 @@ class Physics {
     return '#'+Math.floor(Math.random()*16777203).toString(16);
   }
 
+  static currentTime() {
+    let date = new Date();
+    return date.getTime();
+  }
+
   static dist(pos1, pos2) {
     let xSquared = Math.pow(pos1[0] - pos2[0], 2);
     let ySquared = Math.pow(pos1[1] - pos2[1], 2);
