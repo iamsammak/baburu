@@ -31,9 +31,11 @@ class GameView {
   handleSpace() {
     if (this.view === "pre-game") {
       this.view = "game";
+      console.log(`${this.view}`);
       this.resetGame();
     } else if (this.view === "post-game") {
       this.view = "pre-game";
+      console.log(`${this.view}`);
       // const preGame = document.getElementById('pre-game');
       // const postGame = document.getElementById('post-game');
       // preGame.className = "";
@@ -71,10 +73,12 @@ class GameView {
     this.lastTime = time;
 
     if (this.game.isGameOver()) {
-      // stopAnimation
       console.log("Game Over");
-      // comment this back in after you get the modal working
+
+      this.view = "post-game";
+      console.log(`${this.view}`);
       this.end();
+      // comment this back in after you get the modal working
       // requestAnimationFrame(this.animate.bind(this));
     } else {
       //every call to animate requests causes another call to animate

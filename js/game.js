@@ -142,7 +142,17 @@ class Game {
   step(delta) {
     this.moveObjects(delta);
     this.checkCollisions();
-    // this.gameOver(); put logic in game_view
+    this.checkCannonballs();
+  }
+
+  // change the lifespan of cannonballs
+  checkCannonballs() {
+    let currentTime = Physics.currentTime();
+    this.cannonballs.forEach((cannonball) => {
+      if (currentTime - cannonball.createdAt > 1500) {
+        this.remove(cannonball);
+      }
+    });
   }
 
   wrap(pos) {
@@ -152,7 +162,8 @@ class Game {
   }
 
   isGameOver() {
-    return (this.bubbles.length === 0);
+    // comment out to test cannonball fading
+    // return (this.bubbles.length === 0);
   }
 
 }
