@@ -142,14 +142,14 @@ class Game {
   step(delta) {
     this.moveObjects(delta);
     this.checkCollisions();
-    // this.checkCannonballs();
+    this.checkCannonballs();
   }
 
   // change the lifespan of cannonballs
   checkCannonballs() {
     let currentTime = Physics.currentTime();
     this.cannonballs.forEach((cannonball) => {
-      if (currentTime - cannonball.createdAt > 1500) {
+      if (currentTime - cannonball.createdAt > 3000) {
         this.remove(cannonball);
       }
     });
@@ -170,12 +170,11 @@ class Game {
 
 
 Game.BACKGROUND_COLOR = "#000000";
-// this.width = 1200;
-// this.height = 800;
+
 Game.FPS = 32;
 
 // will need to put level logic for Num of bubbles
-Game.NUM_BUBBLES = 1;
+Game.NUM_BUBBLES = 10;
 
 
 export default Game;

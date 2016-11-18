@@ -2,20 +2,13 @@ import React from 'react';
 import Game from './game';
 
 class GameView {
-  // testing 1.0
-  // constructor(game, ctx) {
-  //   this.ctx = ctx;
-  //   this.game = game;
-  //   this.cannon = this.game.addCannon();
-  // }
 
-// comment in for testing2.0
   constructor() {
     this.canvas = document.getElementById("game-canvas");
     let width = Math.min(document.documentElement.clientWidth, window.innerWidth);
     let height = Math.min(document.documentElement.clientHeight, window.innerHeight);
     this.canvas.width = width;
-    this.canvas.height = height;
+    this.canvas.height = height - 32;
     this.gameWidth = this.canvas.width;
     this.gameHeight = this.canvas.height;
 
@@ -28,7 +21,6 @@ class GameView {
     this.inPlay = true;
 
     this.keySpaceHandler = this.keySpaceHandler.bind(this);
-    // document.addEventListener("keydown", this.keyEnterHandler, false);
     document.addEventListener("keydown", this.keySpaceHandler, false);
 
     this.cannon = this.game.addCannon();
@@ -40,20 +32,8 @@ class GameView {
     }
   }
 
-  // game pause logic
-  handleEnter() {
-    this.inPlay = !this.inPlay;
-    $(".back-shadow").toggle();
-    $("#pause-screen").toggle();
-  }
 
-  keyEnterHandler(e) {
-    if (e.keyCode === 13) {
-      this.handleEnter();
-    }
-  }
-
-  // game start logic
+  // game start/pause/restart logic
   handleSpace() {
     if (this.view === "pre-game") {
       this.view = "game";
@@ -62,23 +42,26 @@ class GameView {
       $(".back-shadow").fadeOut();
 			$("#start-screen").fadeOut();
       this.resetGame();
+    } else if (this.view === "game") {
+      this.view = "pause-game";
+      this.inPlay = !this.inPlay;
+      $(".back-shadow").toggle();
+      $("#pause-screen").toggle();
+    } else if (this.view === "pause-game") {
+      this.view = "game";
+      this.inPlay = !this.inPlay;
+      $(".back-shadow").toggle();
+      $("#pause-screen").toggle();
     } else if (this.view === "post-game") {
       this.view = "pre-game";
       $(".back-shadow").fadeOut();
       $("#game-won").fadeOut();
       console.log(`${this.view}`);
-      // const preGame = document.getElementById('pre-game');
-      // const postGame = document.getElementById('post-game');
-      // preGame.className = "";
-      // postGame.className = "hidden";
       this.resetGame();
     }
   }
 
   resetGame() {
-    // const preGame = document.getElementById('pre-game');
-    // preGame.className = "hidden";
-    // debugger;
     this.game = new Game(this.gameWidth, this.gameHeight);
 
     this.start();
@@ -121,10 +104,6 @@ class GameView {
 }
 
 GameView.MOVES = {
-  // "w": [ 0, 0],
-  // "a": [0,  0],
-  // "s": [ 0,  0],
-  // "d": [ 0,  0]
   "w": [ 0, -1],
   "a": [-1,  0],
   "s": [ 0,  1],

@@ -59,13 +59,7 @@
 	__webpack_require__(8);
 	
 	document.addEventListener('DOMContentLoaded', function () {
-	  // testing1.0
-	  // const canvasEl = document.getElementById("game-canvas");
-	  // const ctx = canvasEl.getContext("2d");
-	  // const game = new Game();
-	  // new GameView(game, ctx).start();
 	
-	  // new testing2.0
 	  new _game_view2.default();
 	});
 
@@ -262,7 +256,7 @@
 	    value: function step(delta) {
 	      this.moveObjects(delta);
 	      this.checkCollisions();
-	      // this.checkCannonballs();
+	      this.checkCannonballs();
 	    }
 	
 	    // change the lifespan of cannonballs
@@ -274,7 +268,7 @@
 	
 	      var currentTime = _physics2.default.currentTime();
 	      this.cannonballs.forEach(function (cannonball) {
-	        if (currentTime - cannonball.createdAt > 1500) {
+	        if (currentTime - cannonball.createdAt > 3000) {
 	          _this.remove(cannonball);
 	        }
 	      });
@@ -296,12 +290,11 @@
 	}();
 	
 	Game.BACKGROUND_COLOR = "#000000";
-	// this.width = 1200;
-	// this.height = 800;
+	
 	Game.FPS = 32;
 	
 	// will need to put level logic for Num of bubbles
-	Game.NUM_BUBBLES = 1;
+	Game.NUM_BUBBLES = 10;
 	
 	exports.default = Game;
 
@@ -594,7 +587,7 @@
 	  }, {
 	    key: 'collideWith',
 	    value: function collideWith(otherObject) {
-	      // will need to add this logic
+	      // default does nothing
 	    }
 	  }, {
 	    key: 'move',
@@ -627,19 +620,6 @@
 	      //   this.pos[0] + timeDelta/20 * this.vel[0],
 	      //   this.pos[1] + timeDelta/20 * this.vel[1]
 	      // ];
-	
-	      // got to write bounce off the wall function
-	      // if (this.game.isOutofBounds(this.pos)) {
-	      //   if (this.isWrappable) {
-	      //     // need to replace this logic with bounceOff later
-	      //     // bouncing off the wall only changes direction, velocity stays the same
-	      //     this.pos = this.game.wrap(this.pos);
-	      //   } else {
-	      //     // actually might make the cannonballs bouncable too
-	      //     // which means no need for removing
-	      //     this.remove();
-	      //   }
-	      // }
 	    }
 	  }, {
 	    key: 'remove',
@@ -930,14 +910,6 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	var GameView = function () {
-	  // testing 1.0
-	  // constructor(game, ctx) {
-	  //   this.ctx = ctx;
-	  //   this.game = game;
-	  //   this.cannon = this.game.addCannon();
-	  // }
-	
-	  // comment in for testing2.0
 	  function GameView() {
 	    _classCallCheck(this, GameView);
 	
@@ -945,7 +917,7 @@
 	    var width = Math.min(document.documentElement.clientWidth, window.innerWidth);
 	    var height = Math.min(document.documentElement.clientHeight, window.innerHeight);
 	    this.canvas.width = width;
-	    this.canvas.height = height;
+	    this.canvas.height = height - 32;
 	    this.gameWidth = this.canvas.width;
 	    this.gameHeight = this.canvas.height;
 	
@@ -957,7 +929,6 @@
 	    this.inPlay = true;
 	
 	    this.keySpaceHandler = this.keySpaceHandler.bind(this);
-	    // document.addEventListener("keydown", this.keyEnterHandler, false);
 	    document.addEventListener("keydown", this.keySpaceHandler, false);
 	
 	    this.cannon = this.game.addCannon();
@@ -971,24 +942,7 @@
 	      }
 	    }
 	
-	    // game pause logic
-	
-	  }, {
-	    key: 'handleEnter',
-	    value: function handleEnter() {
-	      this.inPlay = !this.inPlay;
-	      $(".back-shadow").toggle();
-	      $("#pause-screen").toggle();
-	    }
-	  }, {
-	    key: 'keyEnterHandler',
-	    value: function keyEnterHandler(e) {
-	      if (e.keyCode === 13) {
-	        this.handleEnter();
-	      }
-	    }
-	
-	    // game start logic
+	    // game start/pause/restart logic
 	
 	  }, {
 	    key: 'handleSpace',
@@ -1000,24 +954,27 @@
 	        $(".back-shadow").fadeOut();
 	        $("#start-screen").fadeOut();
 	        this.resetGame();
+	      } else if (this.view === "game") {
+	        this.view = "pause-game";
+	        this.inPlay = !this.inPlay;
+	        $(".back-shadow").toggle();
+	        $("#pause-screen").toggle();
+	      } else if (this.view === "pause-game") {
+	        this.view = "game";
+	        this.inPlay = !this.inPlay;
+	        $(".back-shadow").toggle();
+	        $("#pause-screen").toggle();
 	      } else if (this.view === "post-game") {
 	        this.view = "pre-game";
 	        $(".back-shadow").fadeOut();
 	        $("#game-won").fadeOut();
 	        console.log('' + this.view);
-	        // const preGame = document.getElementById('pre-game');
-	        // const postGame = document.getElementById('post-game');
-	        // preGame.className = "";
-	        // postGame.className = "hidden";
 	        this.resetGame();
 	      }
 	    }
 	  }, {
 	    key: 'resetGame',
 	    value: function resetGame() {
-	      // const preGame = document.getElementById('pre-game');
-	      // preGame.className = "hidden";
-	      // debugger;
 	      this.game = new _game2.default(this.gameWidth, this.gameHeight);
 	
 	      this.start();
@@ -1065,10 +1022,6 @@
 	}();
 	
 	GameView.MOVES = {
-	  // "w": [ 0, 0],
-	  // "a": [0,  0],
-	  // "s": [ 0,  0],
-	  // "d": [ 0,  0]
 	  "w": [0, -1],
 	  "a": [-1, 0],
 	  "s": [0, 1],
