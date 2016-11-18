@@ -23,9 +23,16 @@ Goal of the game:
 
 ### Game views
 
+####Home Screen
 ![homepage]
+
+####Play view
 ![gameview]
+
+####Pause Screen
 ![paused]
+
+####Winner Screen
 ![winner]
 
 [homepage]: ./icons/splash.png
