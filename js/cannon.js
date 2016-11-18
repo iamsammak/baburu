@@ -7,7 +7,7 @@ class Cannon extends MovingObject{
   constructor(options) {
     options.radius = Cannon.RADIUS;
     options.vel = options.vel || [0, 0];
-    options.color = Cannon.COLOR;
+    // options.color = Cannon.COLOR;
     super(options);
 
     this.x = this.pos[0];
@@ -74,12 +74,12 @@ class Cannon extends MovingObject{
     ctx.strokeStyle = "#8c8c8c";
     ctx.stroke();
 
-    ctx.fillStyle = Cannon.COLOR;
+    ctx.fillStyle = this.color;
     ctx.beginPath();
     ctx.arc(this.pos[0],this.pos[1], this.radius, 0, 2*Math.PI, true);
     ctx.fill();
     ctx.lineWidth = 8;
-    ctx.strokeStyle = Cannon.COLOR;
+    ctx.strokeStyle = this.color;
     ctx.stroke();
 
     // draw the angle

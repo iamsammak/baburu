@@ -178,13 +178,23 @@
 	    value: function addCannon() {
 	      // debugger;
 	      var cannon = new _cannon2.default({
-	        pos: [this.width / 2, this.height / 2],
-	        // for now left it as randomPosition
-	        // pos: this.randomPosition(),
-	        game: this
+	        pos: [this.width * (3 / 4), this.height / 2],
+	        game: this,
+	        color: '#FFE041'
 	      });
-	
 	      this.add(cannon);
+	      var cannon2 = new _cannon2.default({
+	        pos: [this.width / 2, this.height / 2],
+	        game: this,
+	        color: "#5AE8FF"
+	      });
+	      this.add(cannon2);
+	      var cannon3 = new _cannon2.default({
+	        pos: [this.width * (1 / 4), this.height / 2],
+	        game: this,
+	        color: "#ffffff"
+	      });
+	      this.add(cannon3);
 	
 	      return cannon;
 	    }
@@ -267,7 +277,7 @@
 	
 	      var currentTime = _physics2.default.currentTime();
 	      this.cannonballs.forEach(function (cannonball) {
-	        if (currentTime - cannonball.createdAt > 3000) {
+	        if (currentTime - cannonball.createdAt > 2000) {
 	          _this.remove(cannonball);
 	        }
 	      });
@@ -674,7 +684,7 @@
 	
 	    options.radius = Cannon.RADIUS;
 	    options.vel = options.vel || [0, 0];
-	    options.color = Cannon.COLOR;
+	    // options.color = Cannon.COLOR;
 	
 	    var _this = _possibleConstructorReturn(this, (Cannon.__proto__ || Object.getPrototypeOf(Cannon)).call(this, options));
 	
@@ -753,12 +763,12 @@
 	      ctx.strokeStyle = "#8c8c8c";
 	      ctx.stroke();
 	
-	      ctx.fillStyle = Cannon.COLOR;
+	      ctx.fillStyle = this.color;
 	      ctx.beginPath();
 	      ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true);
 	      ctx.fill();
 	      ctx.lineWidth = 8;
-	      ctx.strokeStyle = Cannon.COLOR;
+	      ctx.strokeStyle = this.color;
 	      ctx.stroke();
 	
 	      // draw the angle

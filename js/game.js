@@ -73,13 +73,23 @@ class Game {
   addCannon() {
     // debugger;
     const cannon = new Cannon({
-      pos: [this.width / 2, this.height / 2],
-      // for now left it as randomPosition
-      // pos: this.randomPosition(),
-      game: this
+      pos: [this.width * (3/4), this.height / 2],
+      game: this,
+      color: '#FFE041'
     });
-
     this.add(cannon);
+    const cannon2 = new Cannon({
+      pos: [this.width / 2, this.height / 2],
+      game: this,
+      color: "#5AE8FF"
+    });
+    this.add(cannon2);
+    const cannon3 = new Cannon({
+      pos: [this.width * (1/4), this.height / 2],
+      game: this,
+      color: "#ffffff"
+    });
+    this.add(cannon3);
 
     return cannon;
   }
@@ -148,7 +158,7 @@ class Game {
   checkCannonballs() {
     let currentTime = Physics.currentTime();
     this.cannonballs.forEach((cannonball) => {
-      if (currentTime - cannonball.createdAt > 3000) {
+      if (currentTime - cannonball.createdAt > 2000) {
         this.remove(cannonball);
       }
     });
