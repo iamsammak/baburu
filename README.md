@@ -2,7 +2,9 @@
 
 ### Background
 
-Baburu is a classic cannon shooting game with a puzzle mindset.
+Imagine you have a cannon and it shoots cannonballs. You noticed bubbles flying around you. Then a question pops into your head.
+
+What. do. you. do?
 
 ### Game Play
 
@@ -11,10 +13,10 @@ User Interaction:
 - [ ] Interact with the game by moving the mouse over the game board
 - [ ] Shoot cannonballs by clicking the Mouse
 
-Bubble Shooter's moving parts:
+Baburu's moving parts:
 
 - [ ] Cannon fixed to the center of canvas that pivots following the user's mouse location
-- [ ] Bubbles will floating around the board restricted the board area
+- [ ] Bubbles float around, bound by the viewport
 - [ ] Cannonballs will bounce off and expire after 3 seconds
 
 Goal of the game:
