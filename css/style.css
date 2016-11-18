@@ -84,7 +84,8 @@ h2 {
   width: 200px;
   top: 10px;
   left: 50px;
-  font-family: 'Quicksand', sans-serif; }
+  font-family: 'Quicksand', sans-serif;
+  font-style: italic; }
 
 #start-screen .body-control {
   top: 14px;
@@ -97,6 +98,10 @@ h2 {
   top: 13px; }
 
 #start-screen .control-list {
+  font-style: italic;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   position: relative;
   bottom: 5px; }
 
@@ -118,7 +123,8 @@ h2 {
   width: 200px;
   top: 78px;
   left: 56px;
-  font-family: 'Quicksand', sans-serif; }
+  font-family: 'Quicksand', sans-serif;
+  font-style: italic; }
 
 #game-won h2 {
   top: 74px; }
@@ -133,7 +139,8 @@ h2 {
   width: 200px;
   top: 123px;
   left: 56px;
-  font-family: 'Quicksand', sans-serif; }
+  font-family: 'Quicksand', sans-serif;
+  font-style: italic; }
 
 .back-shadow {
   position: fixed;
@@ -164,19 +171,11 @@ h2 {
   border: 2px solid white;
   border-radius: 100%; }
 
-.control-list {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
 .title-text {
   position: relative;
   cursor: default;
   top: 25px;
   font-size: 37px;
-  font-family: 'Quicksand', sans-serif; }
-
-.list-info {
   font-family: 'Quicksand', sans-serif; }
 
 /*# sourceMappingURL=style.css.map*/

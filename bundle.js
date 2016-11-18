@@ -147,7 +147,6 @@
 	        }
 	
 	        this.add(newBubble);
-	        console.log(newBubble);
 	      }
 	    }
 	  }, {

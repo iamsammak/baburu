@@ -48,7 +48,6 @@ class Game {
       }
 
       this.add(newBubble);
-      console.log(newBubble);
     }
   }
 
