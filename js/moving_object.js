@@ -75,9 +75,6 @@ class MovingObject {
   }
 
   remove() {
-    // debugger;
-    // why upon collision are you removing two bubbles and one cannonball
-    // instead of one cannonball and one bubble
     this.game.remove(this);
   }
 

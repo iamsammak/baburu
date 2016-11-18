@@ -14,7 +14,8 @@ span, article, footer, time, small {
   text-decoration: inherit;
   vertical-align: inherit;
   box-sizing: inherit;
-  background: transparent; }
+  background: transparent;
+  font-family: 'Quicksand', sans-serif; }
 
 ul {
   list-style: none; }
@@ -51,5 +52,87 @@ body, html {
   background-color: black;
   margin: 0 auto;
   vertical-align: middle; }
+
+h1 {
+  margin: 0;
+  display: block;
+  color: black;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+  margin-top: 5px; }
+
+h2 {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold; }
+
+.back-shadow {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  opacity: .5; }
+
+.white-screen {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background-color: white; }
+
+.modal {
+  top: calc(50vh - 250px);
+  left: calc(50vw - 150px);
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background-color: #FFE041;
+  text-align: center;
+  /*font-family: 'Quicksand', sans-serif;*/
+  border: 2px solid white;
+  border-radius: 100%; }
+
+.control-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.title-text {
+  position: relative;
+  cursor: default;
+  top: 25px;
+  font-size: 37px;
+  font-family: 'Quicksand', sans-serif; }
+
+.info {
+  position: relative;
+  width: 200px;
+  top: 20px;
+  left: 50px;
+  font-family: 'Quicksand', sans-serif; }
+
+.body-control {
+  position: relative;
+  top: 25px;
+  font-family: 'Quicksand', sans-serif; }
+
+.list-info {
+  font-family: 'Quicksand', sans-serif; }
+
+.controls-info {
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  bottom: -20px; }
+
+.control-list {
+  position: relative;
+  bottom: -3px; }
 
 /*# sourceMappingURL=style.css.map*/

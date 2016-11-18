@@ -4,16 +4,12 @@ import Cannon from './cannon';
 import Physics from './physics';
 
 class Game {
-  constructor() {
+  constructor(dimX, dimY) {
     this.bubbles = [];
     this.cannonballs = [];
     this.cannons = [];
-
-    this.addBubbles();
-    this.addCannon();
-
-    this.width = Game.DIM_X;
-    this.height = Game.DIM_Y;
+    this.width = dimX;
+    this.height = dimY;
     this.level = {
       x: 4,
       y: 83,
@@ -23,6 +19,9 @@ class Game {
       tileheight: 30,
       radius: 15
     };
+
+    this.addBubbles();
+    this.addCannon();
   }
 
   add(incomingObj) {
@@ -73,8 +72,9 @@ class Game {
   }
 
   addCannon() {
+    // debugger;
     const cannon = new Cannon({
-      pos: [500, 300],
+      pos: [this.width / 2, this.height / 2],
       // for now left it as randomPosition
       // pos: this.randomPosition(),
       game: this
@@ -103,9 +103,9 @@ class Game {
   }
 
   draw(ctx) {
-    ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    ctx.clearRect(0, 0, this.width, this.height);
     ctx.fillStyle = Game.BACKGROUND_COLOR;
-    ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    ctx.fillRect(0, 0, this.width, this.height);
 
     this.allThingsOnBoard().forEach((object) => {
       object.draw(ctx);
@@ -113,7 +113,7 @@ class Game {
   }
 
   isOutofBounds(pos) {
-    return (pos[0] < 0) || (pos[1] < 0) || (pos[0] > Game.DIM_X) || (pos[1] > Game.DIM_Y);
+    return (pos[0] < 0) || (pos[1] < 0) || (pos[0] > this.width) || (pos[1] > this.height);
   }
 
   moveObjects(delta) {
@@ -123,7 +123,7 @@ class Game {
   }
 
   randomPosition() {
-    return [ Game.DIM_X * Math.random(), Game.DIM_Y * Math.random()];
+    return [ this.width * Math.random(), this.height * Math.random()];
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
@@ -142,7 +142,7 @@ class Game {
   step(delta) {
     this.moveObjects(delta);
     this.checkCollisions();
-    this.checkCannonballs();
+    // this.checkCannonballs();
   }
 
   // change the lifespan of cannonballs
@@ -157,25 +157,25 @@ class Game {
 
   wrap(pos) {
     return [
-      Physics.wrap(pos[0], Game.DIM_X), Physics.wrap(pos[1], Game.DIM_Y)
+      Physics.wrap(pos[0], this.width), Physics.wrap(pos[1], this.height)
     ];
   }
 
   isGameOver() {
     // comment out to test cannonball fading
-    // return (this.bubbles.length === 0);
+    return (this.bubbles.length === 0);
   }
 
 }
 
 
 Game.BACKGROUND_COLOR = "#000000";
-Game.DIM_X = 1000;
-Game.DIM_Y = 600;
+// this.width = 1200;
+// this.height = 800;
 Game.FPS = 32;
 
 // will need to put level logic for Num of bubbles
-Game.NUM_BUBBLES = 10;
+Game.NUM_BUBBLES = 1;
 
 
 export default Game;
