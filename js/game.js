@@ -73,21 +73,24 @@ class Game {
   addCannon() {
     // debugger;
     const cannon = new Cannon({
-      pos: [this.width * (3/4), this.height / 2],
+      pos: [this.width / 2, this.height / 2],
       game: this,
       color: '#FFE041'
     });
     this.add(cannon);
+
+    // add logic to toggle levels, to add cannons
     const cannon2 = new Cannon({
-      pos: [this.width / 2, this.height / 2],
+      pos: [this.width * (3/4), this.height * (3/4)],
       game: this,
       color: "#5AE8FF"
     });
     this.add(cannon2);
+
     const cannon3 = new Cannon({
-      pos: [this.width * (1/4), this.height / 2],
+      pos: [this.width * (1/4), this.height * (1/4)],
       game: this,
-      color: "#ffffff"
+      color: "#99FF85"
     });
     this.add(cannon3);
 

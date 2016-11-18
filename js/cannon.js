@@ -7,7 +7,6 @@ class Cannon extends MovingObject{
   constructor(options) {
     options.radius = Cannon.RADIUS;
     options.vel = options.vel || [0, 0];
-    // options.color = Cannon.COLOR;
     super(options);
 
     this.x = this.pos[0];
@@ -140,6 +139,5 @@ class Cannon extends MovingObject{
 }
 
 Cannon.RADIUS = 15;
-Cannon.COLOR = '#FFE041';
 
 export default Cannon;

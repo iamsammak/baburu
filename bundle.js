@@ -178,21 +178,24 @@
 	    value: function addCannon() {
 	      // debugger;
 	      var cannon = new _cannon2.default({
-	        pos: [this.width * (3 / 4), this.height / 2],
+	        pos: [this.width / 2, this.height / 2],
 	        game: this,
 	        color: '#FFE041'
 	      });
 	      this.add(cannon);
+	
+	      // add logic to toggle levels, to add cannons
 	      var cannon2 = new _cannon2.default({
-	        pos: [this.width / 2, this.height / 2],
+	        pos: [this.width * (3 / 4), this.height * (3 / 4)],
 	        game: this,
 	        color: "#5AE8FF"
 	      });
 	      this.add(cannon2);
+	
 	      var cannon3 = new _cannon2.default({
-	        pos: [this.width * (1 / 4), this.height / 2],
+	        pos: [this.width * (1 / 4), this.height * (1 / 4)],
 	        game: this,
-	        color: "#ffffff"
+	        color: "#99FF85"
 	      });
 	      this.add(cannon3);
 	
@@ -684,7 +687,6 @@
 	
 	    options.radius = Cannon.RADIUS;
 	    options.vel = options.vel || [0, 0];
-	    // options.color = Cannon.COLOR;
 	
 	    var _this = _possibleConstructorReturn(this, (Cannon.__proto__ || Object.getPrototypeOf(Cannon)).call(this, options));
 	
@@ -827,7 +829,6 @@
 	}(_moving_object2.default);
 	
 	Cannon.RADIUS = 15;
-	Cannon.COLOR = '#FFE041';
 	
 	exports.default = Cannon;
 
