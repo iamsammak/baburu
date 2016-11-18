@@ -25,7 +25,7 @@ class MovingObject {
   }
 
   collideWith(otherObject) {
-    // will need to add this logic
+    // default does nothing
   }
 
   move(timeDelta) {
@@ -60,18 +60,6 @@ class MovingObject {
     //   this.pos[1] + timeDelta/20 * this.vel[1]
     // ];
 
-    // got to write bounce off the wall function
-    // if (this.game.isOutofBounds(this.pos)) {
-    //   if (this.isWrappable) {
-    //     // need to replace this logic with bounceOff later
-    //     // bouncing off the wall only changes direction, velocity stays the same
-    //     this.pos = this.game.wrap(this.pos);
-    //   } else {
-    //     // actually might make the cannonballs bouncable too
-    //     // which means no need for removing
-    //     this.remove();
-    //   }
-    // }
   }
 
   remove() {

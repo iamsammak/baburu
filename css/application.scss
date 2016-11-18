@@ -86,7 +86,31 @@ h2 {
   font-weight: bold;
 }
 
+.LinkedIn {
+  display: none;
+}
 
+.Github {
+  display: none;
+}
+
+#pause-screen {
+  h2 {
+    top: 100px;
+  }
+  p {
+    top: 93px
+  }
+}
+
+#game-won {
+  h2 {
+    top: 100px;
+  }
+  p {
+    top: 93px
+  }
+}
 
 .back-shadow {
 	position: fixed;
