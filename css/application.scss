@@ -125,9 +125,21 @@ h2 {
   h2 {
     top: 100px;
   }
-  p {
+  .body-control {
     top: 93px;
     position: relative;
+  	font-family: 'Quicksand', sans-serif;
+  }
+  h3 {
+    position: relative;
+  	font-family: 'Quicksand', sans-serif;
+    top: 95px
+  }
+  .hint {
+    position: relative;
+  	width: 200px;
+  	top: 78px;
+  	left: 56px;
   	font-family: 'Quicksand', sans-serif;
   }
 }
@@ -136,9 +148,16 @@ h2 {
   h2 {
     top: 100px;
   }
-  p {
+  .body-control {
     top: 93px;
     position: relative;
+  	font-family: 'Quicksand', sans-serif;
+  }
+  .hint {
+    position: relative;
+  	width: 200px;
+  	top: 123px;
+  	left: 56px;
   	font-family: 'Quicksand', sans-serif;
   }
 }

@@ -103,17 +103,36 @@ h2 {
 #pause-screen h2 {
   top: 100px; }
 
-#pause-screen p {
+#pause-screen .body-control {
   top: 93px;
   position: relative;
+  font-family: 'Quicksand', sans-serif; }
+
+#pause-screen h3 {
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  top: 95px; }
+
+#pause-screen .hint {
+  position: relative;
+  width: 200px;
+  top: 78px;
+  left: 56px;
   font-family: 'Quicksand', sans-serif; }
 
 #game-won h2 {
   top: 100px; }
 
-#game-won p {
+#game-won .body-control {
   top: 93px;
   position: relative;
+  font-family: 'Quicksand', sans-serif; }
+
+#game-won .hint {
+  position: relative;
+  width: 200px;
+  top: 123px;
+  left: 56px;
   font-family: 'Quicksand', sans-serif; }
 
 .back-shadow {
