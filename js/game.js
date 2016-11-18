@@ -174,7 +174,7 @@ Game.BACKGROUND_COLOR = "#000000";
 Game.FPS = 32;
 
 // will need to put level logic for Num of bubbles
-Game.NUM_BUBBLES = 10;
+Game.NUM_BUBBLES = 25;
 
 
 export default Game;

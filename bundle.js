@@ -294,7 +294,7 @@
 	Game.FPS = 32;
 	
 	// will need to put level logic for Num of bubbles
-	Game.NUM_BUBBLES = 10;
+	Game.NUM_BUBBLES = 25;
 	
 	exports.default = Game;
 
