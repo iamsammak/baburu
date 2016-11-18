@@ -77,8 +77,10 @@ class GameView {
   animate(time) {
     const timeDelta = time - this.lastTime;
 
-    this.game.step(timeDelta);
-    this.game.draw(this.ctx);
+    if (this.inPlay) {
+    			this.game.step(timeDelta);
+    			this.game.draw(this.ctx);
+		}
     this.lastTime = time;
 
     if (this.game.isGameOver()) {
