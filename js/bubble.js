@@ -5,7 +5,7 @@ import Cannonball from './cannonball';
 
 const DEFAULTS = {
   COLOR: '#ca271c',
-  RADIUS: 25,
+  RADIUS: 15,
   SPEED: 1
 };
 

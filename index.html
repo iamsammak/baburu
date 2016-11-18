@@ -3,15 +3,51 @@
   <head>
     <meta charset="utf-8">
     <title>Bubble Shooter</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Happy+Monkey|Montserrat:400,700|Roboto" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./icons/bubble.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="bundle.js" charset="utf-8"></script>
     <script type="application/javascript" src="vendor/keymaster.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css"></link>
   </head>
   <body>
-    <h1 class="title">Bubble Shooter</h1>
-    <div class="game-area">
-      <canvas id="game-canvas" width="1000" height="600"></canvas>
-    </div>
-    <div>Press 'Space' to Start Game</div>
+    <header>
+      <h1 class="title">A Bubble Shooter Game</h1>
+    </header>
+
+    <content class="main-screen game-area">
+      <canvas id="game-canvas"></canvas>
+  		<section class="white-screen"></section>
+  		<section class="back-shadow"></section>
+  		<aside id="start-screen" class="modal">
+  				<h2 class="title-text">Baburu</h2>
+  				<p class="info">Pop the bubbles...but be wary they might not travel the way you think they will</p>
+          </br>
+  				<p class="body-control">Press <b>Space</b> to start</p>
+
+  				<h3 class="controls-info">Controls</h3>
+  				<ul class="control-list">
+  					<li>Aim with your <b>Mouse</b></li>
+  					<li><b>Click</b> to shoot</li>
+  				</ul>
+  		</aside>
+  		<aside id="pause-screen" class="modal" hidden>
+  				<h2 class="title-text">Game Paused</h2>
+  				<p class="body-control">Press Space to continue</p>
+
+  		</aside>
+  		<aside id="game-won" class="modal" hidden>
+  				<h2 class="title-text">Winner!</h2>
+
+  				<p class="body-control">Press <b>Space</b> to play again</p>
+  		</aside>
+  		<aside id="game-lost" class="modal" hidden>
+  				<h2 class="title-text">Try again?</h2>
+
+  				<p class="body-control">Press Enter to play again</p>
+  		</aside>
+	</content>
   </body>
 </html>

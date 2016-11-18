@@ -16,6 +16,7 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  font-family: 'Quicksand', sans-serif;
 }
 
 ul {
@@ -61,8 +62,221 @@ body, html {
 #game-canvas {
   display: block;
   background-color: black;
-  // width: 800px;
-  // height: 500px;
   margin: 0 auto;
   vertical-align: middle;
 }
+
+
+h1 {
+	margin: 0;
+	display: block;
+	color: black;
+	text-align: center;
+  font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	margin-top: 5px;
+}
+
+h2 {
+	font-size: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}
+
+
+
+.back-shadow {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	background-color: white;
+	opacity: .5;
+}
+
+.white-screen {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	background-color: white;
+}
+
+.modal {
+	top: calc(50vh - 250px);
+	left: calc(50vw - 150px);
+	position: fixed;
+	width: 300px;
+	height: 300px;
+	background-color: #FFE041;
+	text-align: center;
+	/*font-family: 'Quicksand', sans-serif;*/
+	border: 2px solid white;
+	border-radius: 100%
+}
+
+.control-list {
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+
+.title-text {
+	position: relative;
+	cursor: default;
+	top: 25px;
+	font-size: 37px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.info {
+	position: relative;
+	width: 200px;
+	top: 20px;
+	left: 50px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.body-control {
+	position: relative;
+	top: 25px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.list-info {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.controls-info {
+	position: relative;
+	font-family: 'Quicksand', sans-serif;
+	bottom: -20px;
+}
+
+.control-list {
+	position: relative;
+	bottom: -3px;
+}
+
+// .side-bar-content {
+// 	position: relative;
+// 	font-family: 'Quicksand', sans-serif;
+// }
+//
+// .menu-toggle {
+// 	cursor: pointer;
+// 	position: absolute;
+// 	top: 15px;
+// 	left: 0;
+// 	width: 30px;
+// 	height: 30px;
+// 	z-index: 150;
+// 	display: block;
+// }
+//
+// .bar1, .bar2, .bar3 {
+//     width: 35px;
+//     height: 5px;
+//     background-color: #FDFD96;
+//     margin: 6px 0;
+//     transition: 0.4s;
+// }
+//
+// .open .bar1 {
+//     -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+//     transform: rotate(-45deg) translate(-9px, 6px) ;
+// }
+//
+// .open .bar2 {
+//     opacity: 0;
+// }
+//
+// .open .bar3 {
+//     -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+//     transform: rotate(45deg) translate(-8px, -8px) ;
+// }
+//
+// .sidebar {
+// 	position: absolute;
+// 	padding-left: 10px;
+// 	padding-top: 10px;
+// 	top: 0;
+// 	left: 60px;
+// 	width: 240px;
+// 	height: 100%;
+// 	// background-image: url("image/stardust_@2X.png");
+// 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// 	display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+//
+// .side-bar-content.open {
+// 	right: 10px;
+// 	transition: right .5s ease;
+// }
+//
+// .side-bar-content {
+// 	position: fixed;
+// 	right: -240px;
+// 	width: 300px;
+// 	height: 100%;
+// 	top: 0;
+// 	z-index: 500;
+// 	text-align: center;
+// 	color: white;
+// 	transition: right .5s ease;
+// }
+//
+// .sidebar-list {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+// }
+//
+// .list-item>.info-container {
+// 	text-align: center;
+// 	cursor: default;
+//   opacity: 0;
+//   height: 0;
+//   overflow: hidden;
+// }
+//
+// .list-item>.info-container.displayed {
+// 	text-align: center;
+// 	cursor: default;
+// 	opacity: 1;
+//   height: auto;
+//   transition: opacity 1s ease-in;
+//   transition: opacity 1s ease-out;
+// }
+//
+// .list-info {
+// 	padding: 3%;
+// 	margin: 1%;
+// 	font-size: 15px;
+// }
+//
+//
+// .list-item {
+// 	font-size: 22px;
+// 	margin-top: 10px;
+// 	margin-bottom: 15px;
+// 	cursor: pointer;
+// }
+//
+// .link {
+// 	color: #FDFD96;
+// 	text-decoration: none;
+// }
+//
+// .site-links {
+// 	margin-bottom: 30px;
+// 	display: flex;
+// 	justify-content: space-around;
+// }

@@ -20,7 +20,7 @@ class Cannonball extends MovingObject {
 // compare the cannonball's creation time to the current time and if the time execeeds a limit
 // then remove the cannonball
 
-Cannonball.RADIUS = 13;
+Cannonball.RADIUS = 10;
 Cannonball.SPEED = 1.5;
 
 export default Cannonball;

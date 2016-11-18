@@ -65,6 +65,15 @@ class Cannon extends MovingObject{
     // ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true);
     // ctx.fill();
 
+    // background circle
+    ctx.fillStyle = "#7a7a7a";
+    ctx.beginPath();
+    ctx.arc(this.pos[0],this.pos[1], this.radius+4, 0, 2*Math.PI, true);
+    ctx.fill();
+    ctx.lineWidth = 8;
+    ctx.strokeStyle = "#8c8c8c";
+    ctx.stroke();
+
     ctx.fillStyle = Cannon.COLOR;
     ctx.beginPath();
     ctx.arc(this.pos[0],this.pos[1], this.radius, 0, 2*Math.PI, true);
