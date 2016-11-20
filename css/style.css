@@ -183,13 +183,13 @@ h2 {
   font-family: 'Quicksand', sans-serif;
   border: 2px solid white;
   border-radius: 50%;
-  box-shadow: inset 0px 0px 30px #FFF; }
+  box-shadow: inset 0px 0px 70px #FFF; }
 
 .level-circle {
   position: fixed;
   background-color: #FFE041;
   border-radius: 100%;
-  border: 2px solid white;
+  border: 1px solid white;
   text-align: center;
   box-shadow: inset 0px 0px 30px #FFF; }
 
