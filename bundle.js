@@ -64,6 +64,8 @@
 	
 	  new _game_view2.default();
 	});
+	
+	// getElementsByClassName - later to change levels and change title innerHTML
 
 /***/ },
 /* 1 */

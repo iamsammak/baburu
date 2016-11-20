@@ -9,3 +9,5 @@ document.addEventListener('DOMContentLoaded', function(){
 
   new GameView();
 });
+
+// getElementsByClassName - later to change levels and change title innerHTML
