@@ -53,7 +53,7 @@ class GameView {
       $(".back-shadow").toggle();
       $("#pause-screen").toggle();
     } else if (this.view === "post-game") {
-      this.view = "pre-game";
+      this.view = "game";
       $(".back-shadow").fadeOut();
       $("#game-won").fadeOut();
       console.log(`${this.view}`);
