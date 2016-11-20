@@ -66,7 +66,6 @@ body, html {
   vertical-align: middle;
 }
 
-
 h1 {
 	margin: 0;
 	display: block;
@@ -97,7 +96,7 @@ h2 {
     display: flex;
     justify-content: center;
   }
-  .linkedin {
+  .linkedin, .github {
     cursor: pointer;
     display: flex;
     float: right;
@@ -107,16 +106,16 @@ h2 {
     color: #fff;
     }
   }
-  .github {
-    cursor: pointer;
-    margin-top: 5px;
-    padding: 0 5px;
-    display: flex;
-    float: right;
-    &:hover {
-    color: #fff;
-    }
-  }
+  // .github {
+  //   cursor: pointer;
+  //   margin-top: 5px;
+  //   padding: 0 5px;
+  //   display: flex;
+  //   float: right;
+  //   &:hover {
+  //   color: #fff;
+  //   }
+  // }
 }
 
 #start-screen {
@@ -223,18 +222,51 @@ h2 {
 	text-align: center;
 	font-family: 'Quicksand', sans-serif;
 	border: 2px solid white;
-	border-radius: 50%
+	border-radius: 50%;
+  box-shadow: inset 0px 0px 30px #FFF;
+}
 
+.level-circle {
+  position: fixed;
+  background-color: #FFE041;
+  border-radius: 100%;
+  border: 2px solid white;
+  text-align: center;
+  box-shadow: inset 0px 0px 30px #FFF;
+}
+
+.one {
+  width: 70px;
+  height: 70px;
+  top: calc(50vh - 200px);
+  line-height: 70px;
+}
+
+.two {
+  width: 60px;
+  height: 60px;
+  top: calc(50vh - 230px);
+  left: calc(50vw + 120px);
+  line-height: 60px;
+}
+
+.three {
+  width: 50px;
+  height: 50px;
+  top: calc(50vh + 120px);
+  right: calc(50vw - 90px);
+  line-height: 50px;
 }
 
 .title-text {
-	position: relative;
-	cursor: default;
-	top: 25px;
-	font-size: 37px;
-	font-family: 'Quicksand', sans-serif;
+  position: relative;
+  cursor: default;
+  top: 25px;
+  font-size: 37px;
+  font-family: 'Quicksand', sans-serif;
 }
 
+// styling if I want to implement a sidebar
 // .list-info {
 // 	font-family: 'Quicksand', sans-serif;
 // }
