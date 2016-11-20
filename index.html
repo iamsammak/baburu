@@ -3,20 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Bubble Shooter</title>
+    <link rel="shortcut icon" type="image/png" href="./icons/bubble.png">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Happy+Monkey|Montserrat:400,700|Roboto" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="./icons/bubble.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="bundle.js" charset="utf-8"></script>
     <script type="application/javascript" src="vendor/keymaster.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="bundle.js" charset="utf-8"></script>
+    <script src="https://use.fontawesome.com/b072c8cf25.js"></script>
     <link rel="stylesheet" href="css/style.css"></link>
   </head>
   <body>
-    <header>
-      <h1 class="title">A Bubble Shooter Game</h1>
-        <li class="LinkedIn">LinkedIn</li>
-        <li class="Github">GitHub</li>
+    <header class="header-nav">
+      <h1 id="title"></h1>
+      <div class="github">
+        <a target='_blank' href='https://github.com/iamsammak/baburu'>
+          <i class="fa fa-github fa-lg github-icon" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="linkedin">
+        <a target='_blank' href='https://www.linkedin.com/in/samuelmak'>
+          <i class="fa fa-linkedin-square fa-lg linkedin-icon" aria-hidden="true"></i>
+        </a>
+      </div>
     </header>
 
     <content class="main-screen game-area">
@@ -27,24 +35,23 @@
   				<h2 class="title-text">Baburu</h2>
   				<p class="info">You get a cannon. It shoots cannonballs. There are bubbles...pop'em!</p>
           </br>
-  				<p class="body-control">Press <b>Space</b> to start</p>
-
-  				<h3 class="controls-info">Controls</h3>
-  				<ul class="control-list">
-  					<li>Aim with your <b>Mouse</b></li>
-  					<li><b>Click</b> to shoot</li>
-  				</ul>
+          <ul class="control-list">
+            <h3 class="controls-info">To Play</h3>
+            <li>Aim with your <b>Mouse</b></li>
+            <li><b>Click</b> to shoot</li>
+          </ul>
+  				<p class="continue-control">Press <b>Space</b> to start</p>
   		</aside>
   		<aside id="pause-screen" class="modal" hidden>
   				<h2 class="title-text">Game Paused</h2>
-  				<p class="body-control">Press <b>Space</b> to continue</p>
+  				<p class="continue-control">Press <b>Space</b> to continue</p>
           <h3>Hint</h3>
           <p class="hint">Cannonballs disappear after <b>2</b> seconds</p>
 
   		</aside>
   		<aside id="game-won" class="modal" hidden>
   				<h2 class="title-text">Winner!</h2>
-          <p class="body-control">Press <b>Space</b> to play again</p>
+          <p class="continue-control">Press <b>Space</b> to play again</p>
           <p class="hint">Wanna play again...you might notice something different</p>
 
   		</aside>

@@ -59,7 +59,7 @@ h1 {
   color: black;
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 5px; }
 
 h2 {
@@ -70,11 +70,32 @@ h2 {
   font-family: 'Quicksand', sans-serif;
   font-weight: bold; }
 
-.LinkedIn {
-  display: none; }
-
-.Github {
-  display: none; }
+.header-nav {
+  background-color: #FFE041;
+  display: flex;
+  width: 100%;
+  min-width: 400px; }
+  .header-nav #title {
+    padding: 0 0 0 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  .header-nav .linkedin {
+    cursor: pointer;
+    display: flex;
+    float: right;
+    margin-top: 5px;
+    padding: 0 10px 0 5px; }
+    .header-nav .linkedin:hover {
+      color: #fff; }
+  .header-nav .github {
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 0 5px;
+    display: flex;
+    float: right; }
+    .header-nav .github:hover {
+      color: #fff; }
 
 #start-screen h2 {
   top: 18px; }
@@ -87,28 +108,28 @@ h2 {
   font-family: 'Quicksand', sans-serif;
   font-style: italic; }
 
-#start-screen .body-control {
-  top: 14px;
+#start-screen .continue-control {
+  top: 24px;
   position: relative;
   font-family: 'Quicksand', sans-serif; }
 
 #start-screen .controls-info {
+  font-style: normal;
+  margin: 0px;
   position: relative;
-  font-family: 'Quicksand', sans-serif;
-  top: 13px; }
+  font-family: 'Quicksand', sans-serif; }
 
 #start-screen .control-list {
   font-style: italic;
   list-style: none;
   margin: 0;
   padding: 0;
-  position: relative;
-  bottom: 5px; }
+  position: relative; }
 
 #pause-screen h2 {
   top: 86px; }
 
-#pause-screen .body-control {
+#pause-screen .continue-control {
   top: 93px;
   position: relative;
   font-family: 'Quicksand', sans-serif; }
@@ -129,7 +150,7 @@ h2 {
 #game-won h2 {
   top: 74px; }
 
-#game-won .body-control {
+#game-won .continue-control {
   top: 93px;
   position: relative;
   font-family: 'Quicksand', sans-serif; }
@@ -144,7 +165,7 @@ h2 {
 
 .back-shadow {
   position: fixed;
-  top: 0px;
+  top: 29px;
   bottom: 0px;
   left: 0;
   right: 0;
@@ -153,7 +174,7 @@ h2 {
 
 .white-screen {
   position: fixed;
-  top: 0px;
+  top: 29px;
   bottom: 0px;
   left: 0;
   right: 0;
@@ -169,7 +190,7 @@ h2 {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
   border: 2px solid white;
-  border-radius: 100%; }
+  border-radius: 50%; }
 
 .title-text {
   position: relative;

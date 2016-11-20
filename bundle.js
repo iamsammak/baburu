@@ -59,6 +59,8 @@
 	__webpack_require__(8);
 	
 	document.addEventListener('DOMContentLoaded', function () {
+	  var title = document.getElementById("title");
+	  title.innerHTML = "A Bubble Shooter Game";
 	
 	  new _game_view2.default();
 	});
@@ -302,9 +304,7 @@
 	}();
 	
 	Game.BACKGROUND_COLOR = "#000000";
-	
 	Game.FPS = 32;
-	
 	// will need to put level logic for Num of bubbles
 	Game.NUM_BUBBLES = 25;
 	
@@ -927,7 +927,7 @@
 	    var width = Math.min(document.documentElement.clientWidth, window.innerWidth);
 	    var height = Math.min(document.documentElement.clientHeight, window.innerHeight);
 	    this.canvas.width = width;
-	    this.canvas.height = height - 32;
+	    this.canvas.height = height;
 	    this.gameWidth = this.canvas.width;
 	    this.gameHeight = this.canvas.height;
 	
