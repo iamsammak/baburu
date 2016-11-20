@@ -8,7 +8,7 @@ class GameView {
     let width = Math.min(document.documentElement.clientWidth, window.innerWidth);
     let height = Math.min(document.documentElement.clientHeight, window.innerHeight);
     this.canvas.width = width;
-    this.canvas.height = height;
+    this.canvas.height = height - 29;
     this.gameWidth = this.canvas.width;
     this.gameHeight = this.canvas.height;
 
