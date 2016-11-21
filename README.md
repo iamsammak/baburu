@@ -1,5 +1,8 @@
 ## Baburu
 
+![header]
+[homepage]: ./icons/header.png
+
 ### Background
 ####Live Site
 [Click to Play](https://iamsammak.github.io/baburu/)
@@ -50,6 +53,8 @@ Adding sounds with Howler.js :
 - [ ] Ambient bubble mood music
 - [ ] Shooting cannonballs
 - [ ] Bubble pop
+Revamp bubble collision with Paper.js :
+- [ ] bubble's surface will ripple upon collision with other bubbles
 
 Levels :
 
