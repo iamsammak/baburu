@@ -1,7 +1,7 @@
 ## Baburu
 
 ![header]
-[homepage]: ./icons/header.png
+[header]: ./icons/header.png
 
 ### Background
 ####Live Site
