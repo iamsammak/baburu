@@ -13,6 +13,8 @@ What. do. you. do?
 
 ### Game Play
 
+[game_play]: ./icons/game_play.gif
+
 User Interaction:
 
 - [ ] Interact with the game by moving the mouse over the game board

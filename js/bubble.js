@@ -12,9 +12,9 @@ const DEFAULTS = {
 class Bubble extends MovingObject{
   constructor(options = {}) {
     options.color = Physics.randomColor();
-    options.pos = options.pos || options.game.randomPosition();
-    // console.log('my position: ', options.pos);
     options.radius = DEFAULTS.RADIUS;
+    options.pos = options.pos || options.game.randomPosition(options.radius);
+    // console.log('my position: ', options.pos);
     options.vel = options.vel || Physics.randomVec(DEFAULTS.SPEED);
     // console.log('my velocity: ', options.vel);
     super(options);

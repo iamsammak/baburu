@@ -146,7 +146,7 @@
 	    value: function addBubbles() {
 	      for (var i = 0; i < Game.NUM_BUBBLES; i++) {
 	        var newBubble = new _bubble2.default({ game: this });
-	        if (this.overlapOnCreation(newBubble)) {
+	        while (this.overlapOnCreation(newBubble)) {
 	          newBubble = new _bubble2.default({ game: this });
 	        }
 	
@@ -248,8 +248,11 @@
 	    }
 	  }, {
 	    key: 'randomPosition',
-	    value: function randomPosition() {
-	      return [this.width * Math.random(), this.height * Math.random()];
+	    value: function randomPosition(radius) {
+	      var xPosition = Math.floor(Math.random() * (this.width - 2 * radius - 1) + radius + 1);
+	      var yPosition = Math.floor(Math.random() * (this.height - 2 * radius - 1) + radius + 1);
+	      return [xPosition, yPosition];
+	      // return [ this.width * Math.random(), this.height * Math.random()];
 	    }
 	
 	    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
@@ -363,9 +366,9 @@
 	    _classCallCheck(this, Bubble);
 	
 	    options.color = _physics2.default.randomColor();
-	    options.pos = options.pos || options.game.randomPosition();
-	    // console.log('my position: ', options.pos);
 	    options.radius = DEFAULTS.RADIUS;
+	    options.pos = options.pos || options.game.randomPosition(options.radius);
+	    // console.log('my position: ', options.pos);
 	    options.vel = options.vel || _physics2.default.randomVec(DEFAULTS.SPEED);
 	    // console.log('my velocity: ', options.vel);
 	    return _possibleConstructorReturn(this, (Bubble.__proto__ || Object.getPrototypeOf(Bubble)).call(this, options));

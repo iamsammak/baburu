@@ -43,7 +43,7 @@ class Game {
   addBubbles() {
     for (let i = 0; i < Game.NUM_BUBBLES; i++) {
       let newBubble = new Bubble({ game: this });
-      if (this.overlapOnCreation(newBubble)) {
+      while (this.overlapOnCreation(newBubble)) {
         newBubble = new Bubble({ game: this });
       }
 
@@ -62,7 +62,7 @@ class Game {
   // to ensure bubbles are initialized separated from one another
   overlapOnCreation(bubble) {
     let overlapped = false;
-    for(let i =0; i < this.allThingsOnBoard().length; i++) {
+    for(let i = 0; i < this.allThingsOnBoard().length; i++) {
       if (this.allThingsOnBoard()[i].iscollidedWith(bubble)){
         overlapped = true;
       }
@@ -134,8 +134,11 @@ class Game {
     });
   }
 
-  randomPosition() {
-    return [ this.width * Math.random(), this.height * Math.random()];
+  randomPosition(radius) {
+    let xPosition = Math.floor(Math.random() * (this.width - 2*radius - 1) + radius + 1);
+    let yPosition = Math.floor(Math.random() * (this.height - 2*radius - 1) + radius + 1);
+    return [xPosition, yPosition];
+    // return [ this.width * Math.random(), this.height * Math.random()];
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
