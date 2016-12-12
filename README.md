@@ -13,6 +13,7 @@ What. do. you. do?
 
 ### Game Play
 
+![game_play]
 [game_play]: ./icons/game_play.gif
 
 User Interaction:
