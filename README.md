@@ -1,10 +1,9 @@
 ## Baburu
 
-![header]
-[header]: ./icons/header.png
+![header](./icons/header.png)
 
 ### Background
-####Live Site
+#### Live Site
 [Click to Play](https://iamsammak.github.io/baburu/)
 
 Imagine you have a cannon and it shoots cannonballs. You noticed bubbles flying around you. Then a question pops into your head.
@@ -13,8 +12,7 @@ What. do. you. do?
 
 ### Game Play
 
-![game_play]
-[game_play]: ./icons/game_play.gif
+![game_play](./icons/game_play.gif)
 
 User Interaction:
 
@@ -33,16 +31,16 @@ Goal of the game:
 
 ### Game views
 
-####Home Screen
+#### Home Screen
 ![homepage]
 
-####Play view
+#### Play view
 ![gameview]
 
-####Pause Screen
+#### Pause Screen
 ![paused]
 
-####Winner Screen
+#### Winner Screen
 ![winner]
 
 [homepage]: ./icons/splash.png
