@@ -1,6 +1,6 @@
 ## Baburu
 
-![header](./icons/header.png)
+[header](./icons/header.png)
 
 ### Background
 #### Live Site
@@ -12,7 +12,7 @@ What. do. you. do?
 
 ### Game Play
 
-![game_play]
+[game_play]
 
 User Interaction:
 
