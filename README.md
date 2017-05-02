@@ -13,7 +13,6 @@ What. do. you. do?
 ### Game Play
 
 ![game_play]
-[game_play]: ./icons/game_play.gif
 
 User Interaction:
 
@@ -44,11 +43,6 @@ Goal of the game:
 #### Winner Screen
 ![winner]
 
-[homepage]: ./icons/splash.png
-[gameview]: ./icons/game_play.png
-[paused]: ./icons/paused.png
-[winner]: ./icons/winner.png
-
 ### Future Implementations
 
 Adding sounds with Howler.js :
@@ -63,3 +57,10 @@ Levels :
 - [ ] Level 1: aim and shoot - destroy all the moving objects
 - [ ] Level 2: aim and shoot - freeze all the objects (objects will unfreeze when another object or your cannonball collides with it)
 - [ ] Level 3: touch all four walls - shot your cannonball so that it will touch every wall before colliding with
+
+<!-- Image Links -->
+[game_play]: ./icons/game_play.gif
+[homepage]: ./icons/splash.png
+[gameview]: ./icons/game_play.png
+[paused]: ./icons/paused.png
+[winner]: ./icons/winner.png
