@@ -1,6 +1,6 @@
 ## Baburu
 
-[header](./icons/header.png)
+![header](./icons/header.png)
 
 ### Background
 #### Live Site
@@ -12,7 +12,7 @@ What. do. you. do?
 
 ### Game Play
 
-[game_play]
+![game_play](./icons/game_play.gif)
 
 User Interaction:
 
@@ -32,16 +32,16 @@ Goal of the game:
 ### Game views
 
 #### Home Screen
-![homepage]
+![homepage](./icons/splash.png)
 
 #### Play view
-![gameview]
+![gameview](./icons/game_play.png)
 
 #### Pause Screen
-![paused]
+![paused](./icons/paused.png)
 
 #### Winner Screen
-![winner]
+![winner](./icons/winner.png)
 
 ### Future Implementations
 
@@ -57,10 +57,3 @@ Levels :
 - [ ] Level 1: aim and shoot - destroy all the moving objects
 - [ ] Level 2: aim and shoot - freeze all the objects (objects will unfreeze when another object or your cannonball collides with it)
 - [ ] Level 3: touch all four walls - shot your cannonball so that it will touch every wall before colliding with
-
-<!-- Image Links -->
-[game_play]: ./icons/game_play.gif
-[homepage]: ./icons/splash.png
-[gameview]: ./icons/game_play.png
-[paused]: ./icons/paused.png
-[winner]: ./icons/winner.png
